@@ -1,0 +1,19 @@
+name: csv
+project_type: no-code
+networks:
+- name: ethereum
+  chain_id: 1
+  rpc: http:/72.46.87.65:9545/
+storage:
+  csv:
+    enabled: true
+    path: ./generated_csv
+contracts:
+- name: RocketPoolETH
+  details:
+  - network: ethereum
+    filter:
+      event_name: Transfer
+  abi: ./abis/RocketTokenRETH.abi.json
+  include_events:
+  - Transfer
